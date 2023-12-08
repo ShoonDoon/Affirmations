@@ -1,18 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--
+    Layout XML file for the main screen (activity) of the application.
+    Utilizes a FrameLayout as the root element.
+
+    xmlns:android - namespace for Android attributes
+    xmlns:app - namespace for additional capabilities attributes
+    xmlns:tools - namespace for tools attributes
+
+    layout_width and layout_height are set to match_parent to make the layout fill the entire screen.
+    tools:context indicates the context used for previewing the layout in the Android Studio layout editor.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+        RecyclerView widget for displaying a scrolling list of items.
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id - unique identifier for the RecyclerView
+        android:layout_width and android:layout_height - set to match_parent to fill the entire parent layout
+        android:scrollbars - indicates the presence of vertical scrollbars
+        app:layoutManager - specifies the layout manager, in this case, LinearLayoutManager for a vertical list.
+    -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager" />
+
+</FrameLayout>
